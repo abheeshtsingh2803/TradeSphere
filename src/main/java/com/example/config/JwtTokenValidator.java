@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap.KeySetView;
 
 import javax.crypto.SecretKey;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -40,7 +40,7 @@ public class JwtTokenValidator extends OncePerRequestFilter{
 				
 				List<GrantedAuthority> authoritiesList = AuthorityUtils.commaSeparatedStringToAuthorityList("authoroties");
 				
-				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+				Authentication auth = new UsernamePasswordAuthenticationToken(
 						email,
 						null,
 						authoritiesList
