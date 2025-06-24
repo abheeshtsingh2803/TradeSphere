@@ -26,6 +26,7 @@ public class CoinServiceImpl implements CoinService {
 	@Autowired
 	private CoinRepository coinRepository;
 	
+	@Autowired
 	private ObjectMapper objectMapper;
 	
 	@Override

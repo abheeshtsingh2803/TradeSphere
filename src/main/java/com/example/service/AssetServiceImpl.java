@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.model.Asset;
 import com.example.model.Coin;
@@ -10,6 +11,7 @@ import com.example.model.User;
 import com.example.repository.AssetRepository;
 import com.fasterxml.jackson.databind.introspect.AnnotatedClassResolver;
 
+@Service
 public class AssetServiceImpl implements AssetService {
 
 	@Autowired

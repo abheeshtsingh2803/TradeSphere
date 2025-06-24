@@ -2,17 +2,19 @@ package com.example.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
 @Entity
 public class Coin {
 	@Id
-	@JsonProperty("image")
+	@JsonProperty("id")
     private String id;
 	
 	@JsonProperty("symbol")
@@ -74,8 +76,10 @@ public class Coin {
 
     @JsonProperty("ath_date")
     private Date athDate;
-
-     Object roi; 
+    
+    @Embedded
+    @JsonProperty("roi")
+    private Roi roi;
 
     @JsonProperty("last_updated")
     private Date lastUpdated;
@@ -248,11 +252,11 @@ public class Coin {
 		this.athDate = athDate;
 	}
 
-	public Object getRoi() {
+	public Roi getRoi() {
 		return roi;
 	}
 
-	public void setRoi(Object roi) {
+	public void setRoi(Roi roi) {
 		this.roi = roi;
 	}
 

@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.net.Authenticator.RequestorType;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;

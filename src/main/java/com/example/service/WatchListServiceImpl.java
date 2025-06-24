@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.model.Coin;
 import com.example.model.User;
 import com.example.model.Watchlist;
-import com.example.response.WatchlistRepository;
+import com.example.repository.WatchlistRepository;
 
 @Service
 public class WatchListServiceImpl implements WatchlistService {

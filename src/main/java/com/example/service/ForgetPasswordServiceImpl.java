@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.reactive.TransactionalOperatorExtensionsKt;
 
 import com.example.model.ForgetPasswordToken;
@@ -10,6 +11,7 @@ import com.example.model.User;
 import com.example.model.VerificationType;
 import com.example.repository.ForgetPasswordRepository;
 
+@Service
 public class ForgetPasswordServiceImpl implements ForgetPasswordService{
 	@Autowired
 	private ForgetPasswordRepository forgetPasswordRepository;
@@ -35,7 +37,7 @@ public class ForgetPasswordServiceImpl implements ForgetPasswordService{
 
 	@Override
 	public ForgetPasswordToken findByUser(Long userId) {
-		return forgetPasswordRepository.findByUser(userId);
+		return forgetPasswordRepository.findByUserId(userId);
 	}
 
 	@Override
